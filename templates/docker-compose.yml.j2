@@ -4,6 +4,10 @@ version: '{{ traefik_compose_version }}'
 services:
   traefik:
     image: {{ traefik_image }}
+    logging:
+      driver: journald
+      options:
+        tag: traefik
     ports:
 {% if traefik_use_swarm %}
       - target: {{ traefik_entrypoint_http_port }}

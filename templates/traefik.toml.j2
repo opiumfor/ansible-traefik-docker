@@ -61,3 +61,12 @@ endpoint = "{{ traefik_consul_endpoint }}"
 watch = {{ traefik_consul_watch | lower }}
 prefix = "{{ traefik_consul_prefix }}"
 {% endif %}
+
+{% if traefik_logs_enable %}
+[traefikLog]
+  filePath = "/dev/stderr"
+  format   = "json"
+[accessLog]
+  filePath = "/dev/stdout"
+  format = "json"
+{% endif %}

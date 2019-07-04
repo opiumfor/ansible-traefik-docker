@@ -42,3 +42,6 @@ traefik_consul_watch: true
 # Compose, or Swarm?
 traefik_use_swarm: false
 traefik_swarm_network_opts: "--attachable --driver=overlay"
+
+# Logs
+traefik_logs_enable: true
